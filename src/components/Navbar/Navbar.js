@@ -4,13 +4,60 @@ import "./navbar.css";
 
 export default function Navbar({ image, numbers, setNumbers, add }) {
   const [cart, setCart] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
+
   const navigate = useNavigate();
+
   const handleShowImage = () => {
     setCart(false);
     navigate("/image");
   };
+
+  const handleMenu = () => {
+    console.log(showMenu);
+    if (!showMenu) {
+      setShowMenu(true);
+    } else {
+      setShowMenu(false);
+    }
+  };
+
   return (
     <div className="navbar">
+      <div className="menu">
+        <img
+          src="/assets/icon-menu.svg"
+          alt="menu-icon"
+          className="menu-img"
+          onClick={handleMenu}
+        />
+        <div
+          className="menu-links"
+          style={showMenu ? { display: "flex" } : { display: "none" }}
+        >
+          <img
+            src="/assets/icon-close.svg"
+            alt="close-img"
+            className="close-img"
+            onClick={handleMenu}
+          />
+          <NavLink to={"/"} className={"link"}>
+            Collections
+          </NavLink>
+          <NavLink to={"/"} className={"link"}>
+            Man
+          </NavLink>
+          <NavLink to={"/"} className={"link"}>
+            Woman
+          </NavLink>
+          <NavLink to={"/"} className={"link"}>
+            About
+          </NavLink>
+          <NavLink to={"/"} className={"link"}>
+            Contact
+          </NavLink>
+        </div>
+      </div>
       <div className="logo">
         <img src="/assets/logo.svg" alt="logo" />
       </div>
