@@ -29,7 +29,7 @@
 }
 .navbar .cart {
   position: relative;
-  margin-right: -20px;
+  margin-right: 10px;
   cursor: pointer;
 }
 .navbar .cart img {
@@ -49,7 +49,6 @@
   width: 20px;
   height: auto;
   background-color: hsl(26, 100%, 55%);
-  position: absolute;
 }
 .navbar .cart img:hover {
   filter: brightness(0);
@@ -60,7 +59,7 @@
   box-shadow: 20px 20px 50px 15px rgb(150, 149, 149);
   background-color: white;
   position: absolute;
-  right: -150px;
+  right: -100px;
   top: 50px;
   width: 400px;
   height: auto;
@@ -132,4 +131,44 @@
   width: 100%;
   height: 100px;
   color: hsl(0, 0%, 69%);
+}
+
+/* menu */
+
+.navbar .menu {
+  cursor: pointer;
+  display: none;
+  margin-right: 40px;
+}
+.navbar .menu img {
+  z-index: 0;
+}
+.navbar .menu .menu-links {
+  text-decoration: none;
+  box-shadow: 20px 20px 50px 15px rgb(150, 149, 149);
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: 1;
+  height: 100vh;
+  width: 200px;
+  padding-top: 50px;
+}
+.navbar .menu-links .link {
+  padding: 10px 10px;
+  font-weight: 100;
+  font-family: Kumbh Sans;
+  text-decoration: none;
+  color: hsl(219, 9%, 45%);
+  font-size: 20px;
+  margin: 10px 10px;
+  transition: 0.2s ease;
+}
+.navbar .menu-links .link:hover {
+  color: black;
+  border-bottom: 10px solid hsl(26, 100%, 55%);
 }
